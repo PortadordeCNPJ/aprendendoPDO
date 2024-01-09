@@ -5,6 +5,8 @@ use app\classes\Routes;
 
 require "../bootstrap.php";
 
+phpinfo();
+
 $routes = [
     '/' => 'controllers/index.php',
 ];
@@ -12,5 +14,8 @@ $routes = [
 $uri = Uri::load();
 
 require Routes::load($routes, $uri);
+
+
+
 
 
