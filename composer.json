@@ -1,0 +1,16 @@
+{
+    "name": "guilherme.muller2/aprendendo-pdo",
+    "autoload": {
+        "psr-4": {
+            "GuilhermeMuller2\\AprendendoPdo\\": "src/",
+            "app\\":"app"
+        }
+    },
+    "authors": [
+        {
+            "name": "PortadordeCNPJ",
+            "email": "guilhermedesouzamuller@gmail.com"
+        }
+    ],
+    "require": {}
+}
