@@ -5,8 +5,6 @@ use app\classes\Routes;
 
 require "../bootstrap.php";
 
-phpinfo();
-
 $routes = [
     '/' => 'controllers/index.php',
 ];
