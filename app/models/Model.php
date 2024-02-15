@@ -23,16 +23,15 @@ abstract class Model{
         return $list->fetchAll();
     }
 
-    public function find($field, $value)
+    public function find($field, $parameters)
     {
-        $sql = "select * from {$this->table} where {$field} = ?" ;
+        $sql = "select * from {$this->table} where {$field} = :id" ;
         //o bindValue é oque vai fazer a substituição dos doque esta no select, pela ? que está sendo chamada
         $list = $this->connection->prepare($sql);
 
         //O bindParam não vai funcionar se você tentar passar um valor direto para ele, pois ele espera os paramentos da função para funcionar
         // $list->bindParam('id', 3);
-        $list->bindValue(1, $value);
-        $list->execute();
+        $list->execute($parameters);
 
         return $list->fetch();
     }

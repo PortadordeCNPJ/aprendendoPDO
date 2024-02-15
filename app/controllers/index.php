@@ -5,7 +5,7 @@ use app\models\User;
 $user = new User;
 // $users = $user->all();
 
-$userEncontrado = $user->find('id', 3);
+$userEncontrado = $user->find('id',['id' => 3]);
 
 
 dd($userEncontrado);
