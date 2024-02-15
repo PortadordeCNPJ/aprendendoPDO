@@ -19,7 +19,7 @@
     </div>
 
     <div class="containter">
-        <?php $layout->load();?>
+        <?php require $layout->load();?>
     </div>
 </body>
 

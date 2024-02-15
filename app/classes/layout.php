@@ -2,7 +2,7 @@
 
 namespace app\classes;
 
-class layout
+class Layout
 {
     private $view;
 
@@ -13,6 +13,11 @@ class layout
 
     public function load()
     {
-        require "../app/view/{$this->view}.php";
+        return "../app/views/{$this->view}.php";
+    }
+
+    public function master($master)
+    {
+        return "../app/views/{$master}.php";
     }
 }

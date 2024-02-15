@@ -7,6 +7,5 @@ $user = new User;
 
 $userEncontrado = $user->find('id',['id' => 3]);
 
+$layout->add('home');
 
-dd($userEncontrado);
-require "../app/views/index.php";
