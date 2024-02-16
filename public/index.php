@@ -7,7 +7,8 @@ use app\classes\Routes;
 
 $routes = [
     '/' => 'controllers/index',
-    '/create_user' => 'controllers/create_user',
+    '/user_create' => 'controllers/user_create',
+    '/user_store' => 'controllers/user_store',
 ];
 
 $uri = Uri::load();

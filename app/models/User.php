@@ -6,4 +6,18 @@ class User extends Model
 {
     protected $table = 'users';
     
+    //função para fazer um intert into dentro da tabela de usuario no bando
+    public function insert(array $attributes) {
+        $sql = "INSERT INTO {$this->table}(name,email,password) values(:name,:email,:password)";
+
+        //O prepare() é usado aqui para poder trabalhar com os place holders
+        $insert = $this->connection->prepare($sql);
+
+        //foreach passando os valores do formulario e passando para as colunas da tabela
+        foreach ($attributes as $key => $value) {
+            $insert->bindValue($key, $value);
+        }
+
+        return $insert->execute();
+    }
 }

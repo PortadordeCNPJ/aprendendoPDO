@@ -5,7 +5,7 @@ use app\models\User;
 $user = new User;
 // $users = $user->all();
 
-$userEncontrado = $user->find('id',['id' => 3]);
+$users = $user->all();
 
 $layout->add('home');
 
