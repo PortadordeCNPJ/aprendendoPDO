@@ -3,7 +3,7 @@
     "autoload": {
         "psr-4": {
             "GuilhermeMuller2\\AprendendoPdo\\": "src/",
-            "app\\":"/app"
+            "app\\":"app"
         }
     },
     "authors": [
