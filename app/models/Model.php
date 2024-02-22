@@ -2,8 +2,14 @@
 
 namespace app\Models;
 
+use app\traits\PersistDb;
+
+
 
 abstract class Model{
+
+    //Tem este nome, porque quando tem alguma coisa dentro do banco de dados ele persiste nos dados
+    use PersistDb;
 
     //Essa função protege a conecção com o banco, permitindo que apenas quem está dentro de Model possar usar a conecção.
     protected $connection;

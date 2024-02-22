@@ -2,11 +2,12 @@
 
 use app\models\User;
 
-$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 
-$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+$name = htmlspecialchars($_POST['name']);
 
-$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+$email = htmlspecialchars($_POST['email']);
+
+$password = htmlspecialchars($_POST['password']);
 
 $user = new User;
 
