@@ -1,9 +1,13 @@
 <?php
 require "../bootstrap.php";
 
-use app\classes\Uri;
-use app\classes\Layout;
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 use app\classes\Routes;
+use app\classes\Layout;
+use app\classes\Uri;
+
 
 $routes = [
     '/' => 'controllers/index',
