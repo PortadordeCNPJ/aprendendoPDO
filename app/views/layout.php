@@ -20,6 +20,7 @@
             <a class="btn btn-default" href="/user_create" role="button">Cadastrar</a>
         </div>
         
+        <!-- Aqui irao carregar as views de dentro do controller-->
         <?php require $layout->load(); ?>
     </div>
 </body>
