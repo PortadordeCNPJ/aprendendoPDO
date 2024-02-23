@@ -7,6 +7,8 @@ use PDO;
 
 class Connection
 {
+
+    //Função que ira fazer a conexão com bando de dados (PDO)
     public static function connect() 
     {
 

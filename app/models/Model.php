@@ -29,15 +29,16 @@ abstract class Model{
         return $list->fetchAll();
     }
 
-    public function find($field, $parameters)
+    //Essa função faz a busca das informações dentro da tabela
+    public function find($field, $value)
     {
-        $sql = "select * from {$this->table} where {$field} = :id" ;
+        $sql = "select * from {$this->table} where {$field} = :{$field}" ;
         //o bindValue é oque vai fazer a substituição dos doque esta no select, pela ? que está sendo chamada
         $list = $this->connection->prepare($sql);
 
         //O bindParam não vai funcionar se você tentar passar um valor direto para ele, pois ele espera os paramentos da função para funcionar
-        // $list->bindParam('id', 3);
-        $list->execute($parameters);
+        $list->bindValue($field, $value);
+        $list->execute();
 
         return $list->fetch();
     }
