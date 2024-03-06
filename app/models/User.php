@@ -21,12 +21,12 @@ class User extends Model
     //     return $insert->execute($attributes);
     // }
 
-        public function update(array $attributes)
-        {
-            $sql  = "update {$this->table} set name = :name, email = :email, password = :password where id = :id";
-            $update = $this->connection->prepare($sql);
-            $update->execute($attributes);
+//         public function update(array $attributes)
+//         {
+//             $sql  = "update {$this->table} set name = :name, email = :email, password = :password where id = :id";
+//             $update = $this->connection->prepare($sql);
+//             $update->execute($attributes);
 
-            return $update->rowCount();
-        }
+//             return $update->rowCount();
+//         }
 }
