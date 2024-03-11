@@ -18,9 +18,10 @@ trait PersistDb
        return $insert->execute($attributes);
     }
 
-    public function update()
+    public function update($attributes, $where)
     {
+        unset($attributes[array_keys($where)[0]]);
+        $sql = (new Update)->where($where)->sql($this->table, $attributes);
 
-        $sql = (new Update);
     }
 }
