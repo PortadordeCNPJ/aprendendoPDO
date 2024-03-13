@@ -18,6 +18,8 @@ class Update
     {
         $sql = "update {$table} set ";
 
+        unset($attributes[array_keys($this->where)[0]]);
+
         foreach ($attributes as $key => $value)
         {
             $sql.= "{$key} = :{$key}, ";
@@ -29,6 +31,6 @@ class Update
 
         $sql .= " where {$where[0]} = :{$where[0]}";
 
-        dd($sql);
+        return $sql;
     }
 }

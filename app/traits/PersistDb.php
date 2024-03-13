@@ -20,8 +20,12 @@ trait PersistDb
 
     public function update($attributes, $where)
     {
-        unset($attributes[array_keys($where)[0]]);
         $sql = (new Update)->where($where)->sql($this->table, $attributes);
 
+        $update = $this->connection->prepare($sql);
+
+        $update->execute($attributes);
+
+        return $update->rowCount();
     }
 }
