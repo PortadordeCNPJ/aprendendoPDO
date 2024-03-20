@@ -1,6 +1,6 @@
 <?php
 
-
+use app\models\Post;
 use app\models\User;
 use app\classes\Validation;
 use app\models\Transaction;
@@ -12,14 +12,17 @@ $transaction = new Transaction;
 
 $transaction->transactions(function () use ($transaction, $validate){
 
-    $transaction->user->insert($validate);
+    $transaction->model(User::class)->insert($validate);
 
-    $transaction->post->insert([
+    $transaction->model(Post::class)->insert([
         'title' => 'teste',
-        'user' => '10',
+        'user' => '15',
         'description' => 'Livro sobre metodologia de programação',
     ]);
+
 });
+
+
 // $validation = new Validation;
 // $validate = $validation->validate($_POST);
 
