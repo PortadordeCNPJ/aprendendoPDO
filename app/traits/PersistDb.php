@@ -11,16 +11,26 @@ trait PersistDb
     //função que vai dar um INSERT geral, poderá ser usada em todo o código
     public function insert($attributes)
     {
-       $sql = Insert::sql($this->table, $attributes);
+        $attributes = (array) $attributes;
 
-       $insert = $this->connection->prepare($sql);
+        $sql = Insert::sql($this->table, $attributes);
 
-       return $insert->execute($attributes);
+        $insert = $this->connection->prepare($sql);
+
+        return $insert->execute($attributes);
     }
 
-    public function update()
+    //Faz um update dentro geral em todas as tebelas do código.
+    public function update($attributes, $where)
     {
+        $attributes = (array) $attributes;
 
-        $sql = (new Update);
+        $sql = (new Update)->where($where)->sql($this->table, $attributes);
+
+        $update = $this->connection->prepare($sql);
+
+        $update->execute($attributes);
+
+        return $update->rowCount();
     }
 }

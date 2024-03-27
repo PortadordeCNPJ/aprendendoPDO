@@ -2,8 +2,9 @@
 
 namespace app\Models;
 
+use app\classes\Bind;
 use app\traits\PersistDb;
-
+use app\models\Connection;
 
 
 abstract class Model{
@@ -16,7 +17,7 @@ abstract class Model{
 
     public function __construct() {
         //$this chamando a conecção com o banco e chamando junto a classe com o método do banco
-        $this->connection = Connection::connect();
+        $this->connection = Bind::get('connection');
     }
 
     public function all()
